@@ -29,7 +29,6 @@ public class Main {
         connection.setRequestMethod("GET");
         connection.setRequestProperty("User-Agent", "Mozilla/5.0");
 
-        //System.out.println(connection);
 
         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
         String inputLine;
@@ -42,11 +41,7 @@ public class Main {
 
         in.close();
 
-       // System.out.println(response);
-
         String link = response.substring(response.indexOf("[\"\"],[\"")+7, response.indexOf("\"]]"));
-
-        //System.out.println(link);
 
 
         Document doc = Jsoup.connect(link).get();
